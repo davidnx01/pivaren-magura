@@ -1,0 +1,322 @@
+<!doctype html><html lang="sk"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Piváreň Magura · Sásová — neoficiálny návrh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --counter:#211810; --counter-2:#150f0a;
+  --paper:#f3ead2; --paper-2:#ece0c2;
+  --ink:#2c2216; --ink-dim:#5b4c3a; --ink-faint:#8a7a63;
+  --red:#b5262a; --beer:#e5a233; --pen:#274a7a;
+  --line:rgba(44,34,22,.28);
+  --font-label:'Special Elite','Courier New',monospace;
+  --font-doc:'Asap','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--counter);color:var(--paper);font-family:var(--font-doc);line-height:1.5;
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 34px);}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--beer);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+@media (max-width:480px){.wrap{padding:0 14px}}
+
+.notice{background:var(--counter-2);color:rgba(243,234,210,.75);font-size:12.5px;text-align:center;padding:8px 12px;
+  border-bottom:1px solid rgba(255,255,255,.08)}
+.notice b{color:var(--paper)}
+
+header.site{background:var(--counter-2);border-bottom:3px solid var(--beer);position:sticky;top:0;z-index:20}
+.rail{max-width:720px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:16px}
+.rail__name{font-family:var(--font-label);font-size:16px;color:var(--paper);white-space:nowrap}
+nav.tabs{display:flex;gap:4px;margin-left:auto}
+nav.tabs a{font-size:13px;color:rgba(243,234,210,.72);text-decoration:none;padding:8px 10px;min-height:44px;
+  display:inline-flex;align-items:center;border-radius:3px}
+nav.tabs a:hover,nav.tabs a:focus-visible{color:var(--paper);background:rgba(255,255,255,.06)}
+.callbtn{background:var(--red);color:#fff;padding:9px 16px;border-radius:3px;text-decoration:none;font-weight:600;
+  font-size:13.5px;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.callbtn:hover{background:#c9302f}
+@media (max-width:520px){nav.tabs{display:none}}
+
+.stage{padding:34px 14px 8px}
+
+.receipt{position:relative;background:var(--paper);color:var(--ink);max-width:640px;margin:0 auto;
+  padding:34px 30px 6px;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.7), 0 2px 0 rgba(0,0,0,.2);
+  background-image:
+    repeating-linear-gradient(0deg,rgba(44,34,22,.035) 0 1px,transparent 1px 27px),
+    radial-gradient(rgba(44,34,22,.05) 1px,transparent 1px);
+  background-size:auto, 3px 3px;
+  clip-path:polygon(
+    0% 12px,4.1667% 0px,8.3333% 12px,12.5% 0px,16.6667% 12px,20.8333% 0px,25% 12px,29.1667% 0px,
+    33.3333% 12px,37.5% 0px,41.6667% 12px,45.8333% 0px,50% 12px,54.1667% 0px,58.3333% 12px,62.5% 0px,
+    66.6667% 12px,70.8333% 0px,75% 12px,79.1667% 0px,83.3333% 12px,87.5% 0px,91.6667% 12px,95.8333% 0px,100% 12px,
+    100% 100%,0% 100%)}
+@media (max-width:480px){.receipt{padding:30px 20px 6px}}
+
+.r-head{text-align:center;padding-top:6px}
+.stamp-logo{width:230px;max-width:78%;margin:0 auto 4px;display:block;transform:rotate(-3deg);
+  mix-blend-mode:multiply;filter:contrast(1.05) saturate(1.08)}
+.r-name{font-family:var(--font-label);font-weight:400;font-size:15px;letter-spacing:.02em;margin:2px 0 3px}
+.cat-line{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+.status{display:flex;align-items:center;justify-content:center;gap:9px;font-size:14px;flex-wrap:wrap;margin-top:14px}
+#statusDot{width:11px;height:11px;border-radius:50%;flex:none;background:#8a7a63}
+#statusDot.is-open{background:#3f7d3a}
+#statusDot.is-closing{background:var(--beer)}
+#statusDot.is-closed{background:var(--red)}
+.status small{color:var(--ink-faint);font-size:11px;display:block;width:100%;text-align:center;margin-top:2px}
+
+.perf{border:0;border-top:2px dashed var(--line);margin:22px 0}
+.section-label{font-family:var(--font-label);font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-dim);margin:0 0 10px}
+
+.line{display:flex;align-items:baseline;gap:8px;font-size:14.5px;padding:8px 0}
+.line .label{white-space:normal}
+.line .dots{flex:1;border-bottom:1px dotted var(--ink-faint);position:relative;top:-3px;margin:0 2px;min-width:12px}
+.line .val{white-space:nowrap}
+.check{width:15px;height:15px;flex:none;color:#3f6e3a}
+.stampdate{display:inline-block;border:1.5px solid var(--red);color:var(--red);padding:1px 7px;border-radius:3px;
+  transform:rotate(-3deg);font-family:var(--font-label);font-size:11.5px;letter-spacing:.02em}
+.nastenka-item{padding:10px 0;border-bottom:1px solid rgba(44,34,22,.12)}
+.nastenka-item:last-child{border-bottom:0}
+.nastenka-item .row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.nastenka-item p{margin:5px 0 0;font-size:13.5px;color:var(--ink-dim);line-height:1.5}
+.nastenka-item .label{font-size:14.5px;font-weight:600}
+
+.rating-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:6px 0}
+.rating-row .big{font-family:var(--font-label);font-size:26px;color:var(--ink)}
+.rating-row .small{font-size:12.5px;color:var(--ink-dim);text-align:right}
+.followers{font-size:12.5px;color:var(--ink-faint);margin-top:2px}
+
+.sum-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:14px 0 20px;
+  border-top:2px solid var(--ink)}
+.sum-row .lbl{font-family:var(--font-label);font-size:16px;letter-spacing:.04em}
+.sum-row .quote{font-size:15px;text-align:right;max-width:60%;color:var(--pen)}
+.sum-row .quote cite{display:block;font-style:normal;font-size:11px;color:var(--ink-faint);margin-top:2px}
+
+dl.kinfo{margin:0;display:grid;grid-template-columns:auto 1fr;gap:9px 14px;font-size:14.5px}
+dl.kinfo dt{color:var(--ink-faint);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding-top:2px}
+dl.kinfo dd{margin:0}
+dl.kinfo a{text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:3px;color:var(--pen)}
+.tel-source{color:var(--ink-faint);font-size:12px}
+.stamp-warn{display:inline-block;border:2px solid var(--red);color:var(--red);padding:4px 10px;border-radius:4px;
+  transform:rotate(-3deg);font-family:var(--font-label);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;
+  margin-top:10px}
+
+table.hours{width:100%;border-collapse:collapse;margin-top:16px;font-size:14px}
+table.hours td{padding:6px 0;border-bottom:1px solid rgba(44,34,22,.14)}
+table.hours td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+table.hours tr[data-today] td{font-weight:700;color:var(--ink)}
+table.hours tr[data-today] td:first-child::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--red);margin-right:7px}
+.hours-note{font-size:11.5px;color:var(--ink-faint);margin-top:9px}
+
+.map-line{margin-top:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:3px;font-weight:600;
+  font-size:14px;text-decoration:none;min-height:44px;border:1.5px solid var(--ink)}
+.btn:hover{background:rgba(44,34,22,.06)}
+
+.r-foot{text-align:center;padding:20px 0 26px;font-family:var(--font-label);font-size:11px;color:var(--ink-faint);
+  border-top:2px dashed var(--line);margin-top:8px}
+.r-foot p{margin:4px 0}
+
+.outer-foot{text-align:center;padding:22px 14px 100px;color:rgba(243,234,210,.55);font-size:12px}
+
+.bottombar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;background:var(--counter-2);
+  border-top:1px solid rgba(255,255,255,.1);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+.bottombar .row{display:flex;gap:10px}
+.bottombar a{flex:1;display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:6px;
+  font-weight:600;font-size:14.5px;text-decoration:none}
+.bottombar a.primary{background:var(--red);color:#fff}
+.bottombar a.secondary{border:1.5px solid rgba(255,255,255,.28);color:var(--paper)}
+@media (max-width:640px){.bottombar{display:block} .outer-foot{padding-bottom:112px}}
+
+@media (prefers-reduced-motion:no-preference){
+  .callbtn,.btn,nav.tabs a{transition:background-color .2s,border-color .2s,color .2s}
+}
+</style>
+
+<body>
+<div class="notice"><b>Neoficiálny návrh</b> — nie je to oficiálny web podniku · ukážka od webdavid.sk, objednávky ani rezervácie tu nefungujú</div>
+
+<header class="site">
+  <div class="rail">
+    <span class="rail__name">Piváreň Magura</span>
+    <nav class="tabs" aria-label="Sekcie stránky">
+      <a href="#ponuka">Ponuka</a>
+      <a href="#nastenka">Nástenka</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="callbtn" href="tel:+421919269111">Zavolať</a>
+  </div>
+</header>
+
+<main>
+<div class="stage">
+  <div class="receipt">
+    <div class="r-head">
+      <img class="stamp-logo" src="assets/logo.webp" alt="Maľované logo Piváreň Magura" width="230" height="127" fetchpriority="high">
+      <h1 class="r-name">Piváreň Magura</h1>
+      <p class="cat-line">Bar · Sásová · Magurská 1, Banská Bystrica</p>
+      <div class="status">
+        <span id="statusDot"></span>
+        <span id="statusText">Načítavam prevádzkové hodiny…</span>
+        <small>podľa Google Máp, over pred návštevou</small>
+      </div>
+    </div>
+
+    <hr class="perf">
+
+    <section id="ponuka">
+      <p class="section-label">Ponuka</p>
+      <div class="line">
+        <span class="label">Čapované pivo</span><span class="dots"></span>
+        <svg class="check val" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>
+      </div>
+      <div class="line">
+        <span class="label">Alko a nealko nápoje</span><span class="dots"></span>
+        <svg class="check val" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>
+      </div>
+      <div class="line">
+        <span class="label">Zábava pre všetkých</span><span class="dots"></span>
+        <svg class="check val" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>
+      </div>
+    </section>
+
+    <hr class="perf">
+
+    <section id="nastenka">
+      <p class="section-label">Z nástenky (Facebook)</p>
+      <div class="nastenka-item">
+        <div class="row">
+          <span class="label">Sudové víno na priamy odber, aj do fliaš</span>
+          <span class="stampdate">2025</span>
+        </div>
+        <p>Tramín červený, Frankovka modrá, Rizling vlašský, Veltlínske zelené — Pezinské sudové víno.</p>
+      </div>
+      <div class="nastenka-item">
+        <div class="row">
+          <span class="label">Štvrtkový vedomostno-zábavný kvíz</span>
+          <span class="stampdate">2024</span>
+        </div>
+        <p>Tímy 2–5 ľudí, vstupné 2 € na člena, registrácia na mieste.</p>
+      </div>
+      <div class="nastenka-item">
+        <div class="row">
+          <span class="label">Terasa s TV — sledovanie futbalu</span>
+          <span class="stampdate">2021</span>
+        </div>
+        <p>Podľa staršieho príspevku z ich Facebooku — pred návštevou odporúčame overiť, či je aktuálne v prevádzke.</p>
+      </div>
+    </section>
+
+    <hr class="perf">
+
+    <section aria-label="Hodnotenie">
+      <p class="section-label">Hodnotenie</p>
+      <div class="rating-row">
+        <span class="big">3,7 / 5</span>
+        <span class="small">Google Maps<br>73 hodnotení</span>
+      </div>
+      <p class="followers">212 sledovateľov na Facebooku.</p>
+    </section>
+
+    <div class="sum-row">
+      <span class="lbl">Spolu</span>
+      <span class="quote">„…dobrú zábavu pre všetkých“<cite>Facebook, Piváreň Magura</cite></span>
+    </div>
+
+    <section id="kontakt">
+      <p class="section-label">Kontakt</p>
+      <dl class="kinfo">
+        <dt>Adresa</dt><dd>Magurská 1, Sásová, Banská Bystrica</dd>
+        <dt>Telefón</dt><dd><a href="tel:+421919269111">0919 269 111</a> <span class="tel-source">(Facebook)</span></dd>
+        <dt></dt><dd><a href="tel:+421910347055">0910 347 055</a> <span class="tel-source">(Google Maps)</span></dd>
+        <dt>Facebook</dt><dd><a href="https://www.facebook.com/magurabb/" rel="noopener" target="_blank">Piváreň Magura — Messenger</a></dd>
+      </dl>
+      <span class="stamp-warn">Overiť — čísla sa nezhodujú</span>
+
+      <table class="hours" aria-label="Otváracie hodiny">
+        <tbody>
+          <tr data-day="1"><td>Pondelok</td><td>11:00–22:00</td></tr>
+          <tr data-day="2"><td>Utorok</td><td>15:00–22:00</td></tr>
+          <tr data-day="3"><td>Streda</td><td>11:00–22:00</td></tr>
+          <tr data-day="4"><td>Štvrtok</td><td>15:00–22:00</td></tr>
+          <tr data-day="5"><td>Piatok</td><td>15:00–22:00</td></tr>
+          <tr data-day="6"><td>Sobota</td><td>15:00–22:00</td></tr>
+          <tr data-day="0"><td>Nedeľa</td><td>15:00–22:00</td></tr>
+        </tbody>
+      </table>
+      <p class="hours-note">Hodiny podľa Google Máp (26. 9. 2026) — pred návštevou odporúčame overiť.</p>
+      <p class="map-line"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Piv%C3%A1re%C5%88%20Magura%20Magursk%C3%A1%201%20S%C3%A1sov%C3%A1%20Bansk%C3%A1%20Bystrica" target="_blank" rel="noopener">Otvoriť trasu v Google Mapách</a></p>
+    </section>
+
+    <div class="r-foot">
+      <p>Neoficiálny návrh webu · webdavid.sk · 2026</p>
+      <p>Fakty: Facebook Piváreň Magura a Google Maps, stav 26. 9. 2026.</p>
+    </div>
+  </div>
+</div>
+</main>
+
+<p class="outer-foot">Ceny, rezervácie a objednávky na tejto stránke nefungujú — je to len ukážka dizajnu.</p>
+
+<div class="bottombar">
+  <div class="row">
+    <a class="primary" href="tel:+421919269111">Zavolať</a>
+    <a class="secondary" href="https://www.google.com/maps/search/?api=1&query=Piv%C3%A1re%C5%88%20Magura%20Magursk%C3%A1%201%20S%C3%A1sov%C3%A1%20Bansk%C3%A1%20Bystrica" target="_blank" rel="noopener">Mapa</a>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var HOURS = {0:[[900,1320]],1:[[660,1320]],2:[[900,1320]],3:[[660,1320]],4:[[900,1320]],5:[[900,1320]],6:[[900,1320]]};
+var NOTES = {};
+var W = {open:"Teraz otvorené",closing:"Zatvárame o",closed:"Zatvorené",next:"otvárame"};
+var ACC = ["v nedeľu","v pondelok","v utorok","v stredu","vo štvrtok","v piatok","v sobotu"];
+function now(){
+  try{
+    var p = new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Bratislava",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());
+    var m = {}; p.forEach(function(x){ m[x.type] = x.value; });
+    return { day:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[m.weekday], mins:(parseInt(m.hour,10)%24)*60 + parseInt(m.minute,10) };
+  }catch(err){ var d = new Date(); return { day:d.getDay(), mins:d.getHours()*60 + d.getMinutes() }; }
+}
+function hm(t){ if(t >= 1440) return "polnoci"; var h = Math.floor(t/60), m = t%60; return h + ":" + (m<10?"0":"") + m; }
+function status(n){
+  var spans = HOURS[n.day] || [], prev = HOURS[(n.day+6)%7] || [];
+  for(var j=0;j<prev.length;j++){ if(prev[j][1] > 1440 && n.mins < prev[j][1]-1440) return {open:true, end:prev[j][1]-1440}; }
+  for(var i=0;i<spans.length;i++){ if(n.mins >= spans[i][0] && n.mins < spans[i][1]) return {open:true, end:spans[i][1]}; }
+  for(var k=0;k<spans.length;k++){ if(spans[k][0] > n.mins) return {open:false, when:"dnes o " + hm(spans[k][0])}; }
+  for(var d=1; d<=7; d++){ var dd = (n.day+d)%7, s = HOURS[dd]; if(s && s.length) return {open:false, when:(d===1 ? "zajtra" : ACC[dd]) + " o " + hm(s[0][0])}; }
+  return {open:false, when:""};
+}
+function render(){
+  var n = now(), dot = document.getElementById("statusDot"), text = document.getElementById("statusText");
+  if(HOURS && dot && text){
+    var st = status(n);
+    if(st.open){
+      var left = st.end - n.mins;
+      if(left <= 60){ dot.className = "is-closing"; text.innerHTML = W.closing + " " + hm(st.end) + " · <b>ešte " + left + " min</b>"; }
+      else { dot.className = "is-open"; text.innerHTML = W.open + " · <b>do " + hm(st.end) + "</b>"; }
+    }else{
+      var note = NOTES[n.day], noted = note && !(HOURS[n.day]||[]).length;
+      dot.className = noted ? "is-note" : "is-closed";
+      text.innerHTML = noted ? "Dnes " + note : W.closed + (st.when ? " · <b>" + W.next + " " + st.when + "</b>" : "");
+    }
+  }
+  var label = document.getElementById("todayLabel");
+  if(HOURS && label && !label.textContent){
+    var s = HOURS[n.day] || [];
+    if(s.length) label.textContent = "Dnes " + s.map(function(x){ return hm(x[0]) + "–" + (x[1] >= 1440 ? "0:00" : hm(x[1])); }).join(", ");
+    else if(!NOTES[n.day]) label.textContent = "Dnes zatvorené";
+  }
+  [].forEach.call(document.querySelectorAll('[data-day="' + n.day + '"]'), function(r){ r.setAttribute("data-today",""); });
+}
+render(); setInterval(render, 60000);
+})();
+</script>
+</body></html>
